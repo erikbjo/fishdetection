@@ -1,0 +1,53 @@
+path: data/Annotation
+train:
+  - task_fish_detection-2024_01_28_18_12_47-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_15_19-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_18_34-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_21_42-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_22_01-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_28_06-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_29_12-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_30_27-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_33_21-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_41_54-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_44_28-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_51_06-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_55_01-cvat for video 1.1
+  - task_fish_detection-2024_01_28_18_58_28-cvat for video 1.1
+  - task_fish_detection-2024_01_28_19_00_18-cvat for video 1.1
+  - task_fish_detection-2024_02_01_18_23_20-cvat for video 1.1
+  - task_fish_detection-2024_02_01_18_27_02-cvat for video 1.1
+  - task_fish_detection-2024_02_01_18_34_18-cvat for video 1.1
+  - task_fish_detection-2024_02_01_18_41_23-cvat for video 1.1
+  - task_fish_detection-2024_02_01_18_48_30-cvat for video 1.1
+  - task_fish_detection-2024_02_01_18_51_23-cvat for video 1.1
+  - task_fish_detection-2024_02_01_18_51_52-cvat for video 1.1
+  - task_fish_detection-2024_02_01_18_55_41-cvat for video 1.1
+  - task_fish_detection-2024_02_02_06_10_09-cvat for video 1.1
+  - task_fish_detection-2024_02_02_06_10_27-cvat for video 1.1
+  - task_fish_detection-2024_02_02_06_13_45-cvat for video 1.1
+  - task_fish_detection-2024_02_05_07_09_06-cvat for video 1.1
+  - task_fish_detection-2024_02_05_07_43_53-cvat for video 1.1
+  - task_fish_detection-2024_02_05_07_47_09-cvat for video 1.1
+  - task_fish_detection-2024_02_05_07_47_25-cvat for video 1.1
+  - task_fish_detection-2024_02_05_07_51_04-cvat for video 1.1
+  - task_fish_detection-2024_02_05_07_51_37-cvat for video 1.1
+  - task_fish_detection-2024_02_05_11_06_23-cvat for video 1.1
+  - task_fish_detection-2024_02_05_11_51_48-cvat for video 1.1
+  - task_fish_detection-2024_02_05_18_19_38-cvat for video 1.1
+  - task_fish_detection-2024_02_05_18_22_08-cvat for video 1.1
+  - task_fish_detection-2024_02_05_18_29_05-cvat for video 1.1
+  - task_fish_detection-2024_02_05_18_43_34-cvat for video 1.1
+  - task_fish_detection-2024_02_05_18_48_05-cvat for video 1.1
+  - task_fish_detection-2024_02_05_18_52_05-cvat for video 1.1
+  - task_fish_detection-2024_02_05_18_55_11-cvat for video 1.1
+  - task_fish_detection-2024_02_05_20_16_02-cvat for video 1.1
+  - task_fish_detection-2024_02_05_20_19_16-cvat for video 1.1
+  - task_fish_detection-2024_02_05_20_22_25-cvat for video 1.1
+val:
+nc: 5
+names: ["seatrout",
+"salmon",
+"seachar",
+"smolt",
+"pink salmon"]
