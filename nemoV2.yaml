@@ -31,20 +31,21 @@ train:
   - task_fish_detection-2024_02_05_07_47_09-cvat for video 1.1
   - task_fish_detection-2024_02_05_07_47_25-cvat for video 1.1
   - task_fish_detection-2024_02_05_07_51_04-cvat for video 1.1
-  - task_fish_detection-2024_02_05_07_51_37-cvat for video 1.1
+val:
   - task_fish_detection-2024_02_05_11_06_23-cvat for video 1.1
   - task_fish_detection-2024_02_05_11_51_48-cvat for video 1.1
+  - task_fish_detection-2024_02_05_07_51_37-cvat for video 1.1
   - task_fish_detection-2024_02_05_18_19_38-cvat for video 1.1
   - task_fish_detection-2024_02_05_18_22_08-cvat for video 1.1
   - task_fish_detection-2024_02_05_18_29_05-cvat for video 1.1
   - task_fish_detection-2024_02_05_18_43_34-cvat for video 1.1
   - task_fish_detection-2024_02_05_18_48_05-cvat for video 1.1
+test:
   - task_fish_detection-2024_02_05_18_52_05-cvat for video 1.1
   - task_fish_detection-2024_02_05_18_55_11-cvat for video 1.1
   - task_fish_detection-2024_02_05_20_16_02-cvat for video 1.1
   - task_fish_detection-2024_02_05_20_19_16-cvat for video 1.1
   - task_fish_detection-2024_02_05_20_22_25-cvat for video 1.1
-val:
 nc: 5
 names: ["seatrout",
 "salmon",
