@@ -1,0 +1,14 @@
+path: ./data/Annotation  # dataset root dir
+train: images/train2017
+val: images/train2017  # val images (relative to 'path') 128 images
+test:  # test images (optional)
+
+# Classes (80 COCO classes)
+names:
+  0: person
+  1: bicycle
+  2: car
+  # ...
+  77: teddy bear
+  78: hair drier
+  79: toothbrush
