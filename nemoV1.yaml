@@ -1,9 +1,9 @@
-path: ./data/Annotation  # dataset root dir
-train: images/train2017
-val: images/train2017  # val images (relative to 'path') 128 images
-test:  # test images (optional)
+path:
+train:
+  - data/images/train
+val:
+  - data/images/val
 
 # Classes
-names:
-  0: not_fish
-  1: fish
+nc: 1  # number of classes
+names: [ 'fish' ]
