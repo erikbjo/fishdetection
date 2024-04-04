@@ -1,23 +1,18 @@
-# File is used to create the dataset for the model, it will create a dataset with the following structure:
-#   - datasets
-#       - data
+# File is used to create the dataset for the model, it will create a dataset with the following structure from root:
+#   - data
+#       - images
 #           - train
-#               - images
-#                   - {date} (folder)
-#                       - {image}.png
-#                       - {image}.png
-#                       - ...
-#                   - ...
-#               - labels
-#                   - {date} (folder)
-#                       - {image}.txt with YOLO format: {class} {x_center} {y_center} {width} {height}
-#                       - {image}.txt
-#                       - ...
-#                   - ...
+#               - folders with images ...
 #           - val
-#               - ...
+#               - folders with images ...
+#       - labels
+#           - train
+#               - folders with labels ...
+#           - val
+#               - folders with labels ...
+
 # Please only run this script once
-# Delete the datasets folder if you want to run this script again, ensure that the data folder is not deleted
+# Delete the data folder if you want to run this script again, ensure that the data folder is not deleted
 
 import os
 import random
@@ -26,16 +21,15 @@ import zipfile
 import xml.etree.ElementTree as ET
 
 percentage_train = 0.8
+path_to_anadrom = "../ANADROM"
+path_to_annotation = os.path.join(path_to_anadrom, "Annotation")
 path_to_data = "../data"
-path_to_annotation = os.path.join(path_to_data, "Annotation")
-path_to_datasets = "../datasets"
-path_to_data_under_datasets = os.path.join(path_to_datasets, "data")
-path_to_train = os.path.join(path_to_data_under_datasets, "train")
-path_to_images_train = os.path.join(path_to_train, "images")
-path_to_labels_train = os.path.join(path_to_train, "labels")
-path_to_val = os.path.join(path_to_data_under_datasets, "val")
-path_to_images_val = os.path.join(path_to_val, "images")
-path_to_labels_val = os.path.join(path_to_val, "labels")
+path_to_images = os.path.join(path_to_data, "images")
+path_to_labels = os.path.join(path_to_data, "labels")
+path_to_images_train = os.path.join(path_to_images, "train")
+path_to_images_val = os.path.join(path_to_images, "val")
+path_to_labels_train = os.path.join(path_to_labels, "train")
+path_to_labels_val = os.path.join(path_to_labels, "val")
 
 
 def unzip_all_zips_from_source_to_target(source_dir, dest_dir):
@@ -123,12 +117,12 @@ def main():
     print("Creating dataset for training and validation")
 
     # Create the datasets folders
-    os.makedirs(path_to_datasets, exist_ok=True)
-    os.makedirs(path_to_train, exist_ok=True)
+    os.makedirs(path_to_data, exist_ok=True)
+    os.makedirs(path_to_images, exist_ok=True)
+    os.makedirs(path_to_labels, exist_ok=True)
     os.makedirs(path_to_images_train, exist_ok=True)
-    os.makedirs(path_to_labels_train, exist_ok=True)
-    os.makedirs(path_to_val, exist_ok=True)
     os.makedirs(path_to_images_val, exist_ok=True)
+    os.makedirs(path_to_labels_train, exist_ok=True)
     os.makedirs(path_to_labels_val, exist_ok=True)
 
     # Unzip the folders and move them to the train folders
@@ -140,6 +134,8 @@ def main():
         for file in os.listdir(folder_path):
             if file.endswith(".xml"):
                 create_labels_from_xml(os.path.join(folder_path, file), os.path.join(path_to_labels_train, folder))
+
+    # TODO: Split the training set into training and validation set
 
 
 if __name__ == "__main__":
