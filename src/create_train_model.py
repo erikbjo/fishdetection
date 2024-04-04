@@ -6,7 +6,8 @@ if __name__ == "__main__":
     model = YOLO('YOLOv8n.pt')  # Can use many other models check link above
 
     # Train the model
-    model.train(data='../nemoV1.yaml', epochs=1)
+    model.train(data='../nemoV1.yaml', epochs=2)
 
     # Save the model
-    model.save('../model.pt')
+    # model.save('../model.pt')
+    # --- Model is saved to runs/detect/train{number}/weights/best.pt
