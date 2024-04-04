@@ -1,4 +1,4 @@
-path: /Users/erik/repos/ComputerVisionProject
+path: /Users/erik/repos/ComputerVisionProject # Path to project root, change this to your own path
 train: data/images/train
 val: data/images/val
 

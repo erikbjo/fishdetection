@@ -135,7 +135,6 @@ def main():
             if file.endswith(".xml"):
                 create_labels_from_xml(os.path.join(folder_path, file), os.path.join(path_to_labels_train, folder))
 
-    # TODO: Split the training set into training and validation set
     # Get the folders
     folders = os.listdir(path_to_images_train)
 
