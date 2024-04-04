@@ -136,6 +136,25 @@ def main():
                 create_labels_from_xml(os.path.join(folder_path, file), os.path.join(path_to_labels_train, folder))
 
     # TODO: Split the training set into training and validation set
+    # Get the folders
+    folders = os.listdir(path_to_images_train)
+
+    # Split the folders into 0.8 training and 0.2 validation
+    random.shuffle(folders)
+
+    # Move 0.2 of the folders to the validation set
+    val_folders = folders[int(percentage_train * len(folders)):]
+
+    # Move folders to their respective directories
+    for folder in val_folders:
+        src_folder_path = os.path.join(path_to_images_train, folder)
+        dest_folder_path = os.path.join(path_to_images_val, folder)
+        shutil.move(src_folder_path, dest_folder_path)
+
+        # Also move labels folder
+        src_labels_folder_path = os.path.join(path_to_labels_train, folder)
+        dest_labels_folder_path = os.path.join(path_to_labels_val, folder)
+        shutil.move(src_labels_folder_path, dest_labels_folder_path)
 
 
 if __name__ == "__main__":
