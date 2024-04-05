@@ -113,6 +113,18 @@ def create_labels_from_xml(xml_file, dest_path):
                     f.write(f"{class_name} {x_center} {y_center} {width} {height}\n")
 
 
+def remove_useless_png_files(train_folder, labels_folder):
+    # Removes all the png files that do not have a corresponding txt file
+    for folder in os.listdir(train_folder):
+        folder_path = os.path.join(train_folder, folder)
+        for file in os.listdir(folder_path):
+            if file.endswith(".PNG"):
+                print("Checking file: ", file, " in folder: ", folder)
+                file_name = file.split(".")[0]
+                if not os.path.exists(os.path.join(labels_folder, folder, f"{file_name}.txt")):
+                    os.remove(os.path.join(folder_path, file))
+                    print(f"Removed {file} from {folder} as it has no corresponding txt file")
+
 def main():
     print("Creating dataset for training and validation")
 
@@ -134,6 +146,9 @@ def main():
         for file in os.listdir(folder_path):
             if file.endswith(".xml"):
                 create_labels_from_xml(os.path.join(folder_path, file), os.path.join(path_to_labels_train, folder))
+
+    # Remove all the png files that do not have a corresponding txt file
+    remove_useless_png_files(path_to_images_train, path_to_labels_train)
 
     # Get the folders
     folders = os.listdir(path_to_images_train)
